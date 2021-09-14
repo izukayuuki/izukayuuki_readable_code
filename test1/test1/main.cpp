@@ -18,7 +18,7 @@
 using namespace std;
 
 /*ファイル読み込み関数のfopen()でエラーが起こりNULLが返されてしまう*/
-
+/*
 //ファイル読み込み関数
 void ReadFile(const char *filename,char *word, int &num){
     FILE *fp;
@@ -56,16 +56,22 @@ int main(int argc, const char * argv[]) {
     MakeFile("Output.txt", word, n);
     return 0;
 }
+*/
 
 /*以下リーダブルではないがfopenの部分が動くコード*/
 /*ファイル書き出しはできていない*/
 /*上記のコードの書き出し関数では変数の型が違うので使えない*/
 
-/*
 #include"iostream"
 #include"fstream"
 #include"sstream"
 using namespace std;
+
+void outputToFile(string str) {
+string filename = "output.txt";
+ofstream ofs(filename);
+ofs << str << endl;
+}
 
 int main() {
 string str = "word.txt";
@@ -74,9 +80,8 @@ string line;
 while (getline(ifs, line)) {
 istringstream stream(line);
 while (getline(stream, str, ' ')) {
-cout << str << endl;
+outputToFile(str);
 }
 }
 }
-*/
 
