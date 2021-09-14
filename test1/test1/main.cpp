@@ -57,5 +57,26 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+/*以下リーダブルではないがfopenの部分が動くコード*/
+/*ファイル書き出しはできていない*/
+/*上記のコードの書き出し関数では変数の型が違うので使えない*/
 
+/*
+#include"iostream"
+#include"fstream"
+#include"sstream"
+using namespace std;
+
+int main() {
+string str = "word.txt";
+ifstream ifs(str);
+string line;
+while (getline(ifs, line)) {
+istringstream stream(line);
+while (getline(stream, str, ' ')) {
+cout << str << endl;
+}
+}
+}
+*/
 
